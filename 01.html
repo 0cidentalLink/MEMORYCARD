@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocidental-Link</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Cabeçalho com imagem -->
+  <header class="topo">
+    <img src="top.png" alt="Imagem de cabeçalho">
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="menu-navegacao">
+    <ul>
+       <li><a href="https://0cidentallink.github.io/new/">Início</a></li>
+      <li><a href="https://0cidentallink.github.io/noticias/">Notícias</a></li>
+      <li><a href="#">Entreterimento</a></li>
+      
+    
+    </ul>
+  </nav>
+
+  <!-- Seção principal -->
+  <main class="conteudo">
+     
+ <div id="publicidade">
+
+<script>
+  fetch('publicidade.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('publicidade').innerHTML = html;
+    })
+    .catch(err => console.error('Erro ao carregar publicidade:', err));
+</script>
+
+      </div>  
+      
+      
+      
+      
+      
+  </main>
+
+   
+</body>
+</html>
