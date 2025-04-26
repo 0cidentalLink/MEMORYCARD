@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocidental-Link</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Cabeçalho com imagem -->
+  <header class="topo">
+    <img src="top.png" alt="Imagem de cabeçalho">
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="menu-navegacao">
+    <ul>
+      <li><a href="https://0cidentallink.github.io/new/">Início</a></li>
+      <li><a href="https://0cidentallink.github.io/noticias/">Notícias</a></li>
+      <li><a href="#">Entreterimento</a></li>
+      
+    
+    </ul>
+  </nav>
+
+  <!-- Seção principal -->
+  <main class="conteudo">
+    
+    
+      
+              <div class="container-vendas">
+              <section class="carousel-container-vendas">
+               <ul class="carousel">
+    
+        
+                 <li><a href="#"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltpq8ycmpstl49@resize_w900_nl.webp" alt="banner"></a></li>
+                 <li><a href="#"><img src="https://down-br.img.susercontent.com/file/cdb27005062d20c7e79028aa1a775864.webp" alt="banner"></a></li>
+                 <li><a href="#"><img src="https://down-br.img.susercontent.com/file/b154ab7211e13d22f8274bf1825c8434.webp" alt="banner"></a></li>
+                 <li><a href="#"><img src="https://down-br.img.susercontent.com/file/44fcaba8a9eb53edf4141572c9c74ef6.webp" alt="banner"></a></li>
+                 <li><a href="#"><img src="https://down-br.img.susercontent.com/file/e1440d5067f1743f70f5a2650cc5796c.webp" alt="banner"></a></li>
+                 <li><a href="#"><img src="https://down-br.img.susercontent.com/file/4b7882ccde0fb877e160113fe933ae0a.webp" alt="banner"></a></li>
+      
+    
+              </ul>
+
+               <div class="buttons">
+               <button id="prev">&#10094;</button>
+               <button id="next">&#10095;</button>
+               </div>
+
+                <div class="indicators" id="indicators"></div>
+        </section>
+          
+          <div class="conteudo-vendas">
+           <h3>Bota texto</h3> 
+           <p> aqui e o texto de vendas</p>
+          </div>
+      </div>
+         
+ 
+ 
+      
+   
+      
+      
+      
+    <script>
+    const carousel = document.querySelector('.carousel');
+    const indicatorsContainer = document.getElementById('indicators');
+    const slides = document.querySelectorAll('.carousel li');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // Criar indicadores
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('indicator');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      indicatorsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      document.querySelectorAll('.indicator').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+  </script>
+        
+  </main>
+
+   
+</body>
+</html>
